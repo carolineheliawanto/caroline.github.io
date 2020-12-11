@@ -1,0 +1,1714 @@
+@font-face {
+   src: url(../fonts/Chaloops\ W00\ Bd.ttf);
+   font-family: Chaloops;
+}
+
+@font-face {
+   src: url(../fonts/Helvetica LT Std Roman_0.otf);
+   font-family: Helvetica;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.bck {
+   background-image: url("../background.png");
+   background-size: cover;
+   width: auto;
+}
+
+li {
+   list-style: none;
+}
+
+.gridfoot a{
+   text-decoration: none;
+   color: #6A4F21;
+}
+
+.grid5 a{
+   text-decoration: none;
+   color: #FFFFFF;
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 30px 10%;
+   background-color: whitesmoke;
+   position: fixed;
+   width: 80%;
+   height: 10px;
+   color: #6A4F21;
+}
+
+.logo {
+   width: 149px;
+   height: 69px;
+   left: 100px;
+   top: 6px;
+}
+
+.nav__links a, .cta, .overlay__content a {
+   font-family: Helvetica;
+   font-weight: bold;
+   color: #6A4F21;
+   text-decoration: none;
+}
+
+.overlay__content .cta {
+   background-color: #6A4F21;
+   color: white;
+}
+
+.nav__links {
+   list-style: none;
+   display: flex;
+}
+
+.nav__links li {
+   padding: 0px 20px;
+}
+
+.nav__links li a {
+   transition: color 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+   color: black;
+}
+
+.cta {
+   padding: 9px 25px;
+   /* margin-right: 50px; */
+   border: none;
+   cursor: pointer;
+   transition: background-color 0.3s ease 0s;
+   color: white;
+   /* width: 10px; */
+}
+
+.ham {
+   width: 50px;
+   height: auto;
+}
+
+
+
+/* Mobile Nav */
+
+.menu {
+   display: none;
+}
+
+.overlay {
+   height: 65%;
+   width: 0;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   background-color: whitesmoke;
+   overflow-x: hidden;
+   transition: 0.5s ease 0s;
+}
+
+.overlay--active {
+   width: 100%;
+}
+
+.overlay__content {
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.overlay a {
+   padding: 15px;
+   font-size: 20px;
+   display: block;
+   transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover, .overlay a:focus {
+   color: black;
+}
+
+.overlay .close {
+   position: absolute;
+   top: -20px;
+   right: 0px;
+   font-size: 40px;
+   color: grey;
+}
+
+.iconfoot {
+   width: 49px;
+   height: 49px;
+   padding: 10px;
+}
+
+.grid6 {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 300px 100px 350px 700px 300px 550px 300px 500px 300px 500px 375px 450px 300px 300px 50px 200px 400px 50px;
+   grid-template-areas: ". title ."". photo1 ." ". photo2 ." ". photo3 ." ". photo4 ." ". photo5 ." ". photo6 ." ". photo7 ." ". photo8 ." ". photo9 ." ". photo10 ." ". photo11 ." ". photo12 ." ". photo13 ." ". photo14 ." ". photo15 ." ". photo16 ." ". . .";
+   grid-gap: 10px;
+   justify-content: center;
+   text-align: center;
+}
+
+.gridfoot {
+   display: grid;
+   grid-template-columns: 25px 1fr 1fr 1fr 25px;
+   grid-template-rows: 1fr 1fr 1fr 25px;
+   grid-template-areas: ". footspec footspec footspec ." ". foot2 . foot3 ." ". foot4 foot4 foot4 ." ". foot5 foot5 foot5 .";
+}
+
+.grid7 {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 350px 350px 300px 600px 300px 600px 400px 500px 200px 10px;
+   grid-template-areas: "title title title"". subtitle ." ". photo1 ." ". photo2 ." ". photo3 ." ". photo4 ." ". photo5 ." ". photo6 ." ". endtitle ." ". . .";
+   grid-gap: 10px;
+   justify-content: center;
+   text-align: center;
+}
+
+.endtitle {
+   justify-self: center;
+   grid-area: endtitle;
+}
+
+.grid2 {
+   display: grid;
+   grid-template-columns: 15px 1fr 15px;
+   grid-template-rows: 150px 300px 150px 120px 200px 380px 200px 50px;
+   grid-template-areas: "judul2 judul2 judul2"". foto2 ." ". isi2 ." ". isi22 ." ". isi23 ." ". isi24 ." ". isi25 ."". . ." ;
+   grid-gap: 10px;
+   justify-content: center;
+   text-align: center;
+}
+
+.grid3 {
+   display: grid;
+   grid-template-columns: 15px 1fr 15px;
+   grid-template-rows: 150px 300px 150px 120px 120px 120px 100px 100px;
+   grid-template-areas: "judul2 judul2 judul2"". foto2 ." ". isi2 ." ". isi22 ." ". isi23 ." ". isi24 ." ". isi25 ."". . ." ;
+   grid-gap: 10px;
+   justify-content: center;
+   text-align: center;
+
+}
+.grid4 {
+   display: grid;
+   grid-template-columns: 15px 1fr 15px;
+   grid-template-rows: 150px 300px 75px 180px 200px 200px 100px 150px 100px 100px 100px;
+   grid-template-areas: "judul2 judul2 judul2"". foto2 ." ". isi2 ." ". isi22 ." ". isi23 ." ". isi24 ." ". isi25 ." ". isi26 ." ". isi27 ." ". isi28 ."". . ." ;
+   grid-gap: 10px;
+   justify-content: center;
+   text-align: center;
+
+}
+.isi2 {
+   justify-self: center;
+   grid-area: isi2;
+   font-family: Helvetica LT Std;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+}
+.isi22 {
+   justify-self: center;
+   grid-area: isi22;
+   font-family: Helvetica LT Std;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+}
+.isi23 {
+   justify-self: center;
+   grid-area: isi23;
+   font-family: Helvetica LT Std;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+}
+.isi24 {
+   justify-self: center;
+   grid-area: isi24;
+   font-family: Helvetica LT Std;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+}.isi25 {
+   justify-self: center;
+   grid-area: isi25;
+   font-family: Helvetica LT Std;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+}
+.isi26 {
+   justify-self: center;
+   grid-area: isi26;
+   font-family: Helvetica LT Std;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+}
+.isi27 {
+   justify-self: center;
+   grid-area: isi27;
+   font-family: Helvetica LT Std;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+}
+.isi28 {
+   justify-self: center;
+   grid-area: isi28;
+   font-family: Helvetica LT Std;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+}
+.judul2 {
+   justify-self: center;
+   grid-area: judul2;
+   font-family: Chaloops;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 28.43px;
+   line-height: 28px;
+   margin-top: 50px;
+   color: #6A4F21;
+}
+
+.foto2 {
+   justify-self: center;
+   grid-area: foto2;
+   width: 430px;
+   height: 243px;
+}
+
+
+
+.grid5 {
+   display: grid;
+   grid-template-columns: 10px 1fr 10px;
+   grid-template-rows: 350px 300px 300px 100px 100px 300px 200px 150px 1fr;
+   grid-template-areas: ".title."". subtitle ." ". photo1 ." ". isi51 ." ". celebrate ." ". photo2 ." ". isi52 ." ". wild ." ". donate .";
+   grid-gap: 10px;
+   justify-content: center;
+   text-align: center;
+}
+
+.celebrate {
+   font-family: Helvetica;
+   font-style: normal;
+   background-color: #6A4F21;
+   border-radius: 0;
+   text-align: center;
+   cursor: pointer;
+   padding-top: : 15px ;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 50px;
+   color: white;
+   justify-self: center;
+   grid-area: celebrate;
+   width: 162px;
+   height: 41px;
+   box-shadow: 3px 3px grey;
+
+}
+
+.wild {
+   font-family: Helvetica;
+   font-style: normal;
+   background-color: #6A4F21;
+   border-radius: 0;
+   text-align: center;
+   cursor: pointer;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 50px;
+   color: white;
+   grid-area: wild;
+   width: 215px;
+   height: 41px;
+   justify-self: center;
+   box-shadow: 3px 3px grey;
+
+}
+
+.isi51 {
+   font-family: Helvetica LT Std;
+   font-style: italic;
+   font-weight: bold;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+   justify-self: center;
+   grid-area: isi51;
+}
+
+.isi52 {
+   font-family: Helvetica LT Std;
+   font-style: italic;
+   font-weight: bold;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+   justify-self: center;
+   grid-area: isi52;
+}
+
+img {
+   width: 551px;
+   height: 310px;
+   /* margin-top: 5%; */
+}
+
+.subtitle {
+   justify-self: center;
+   grid-area: subtitle;
+}
+
+.footspec {
+   justify-self: center;
+   grid-area: footspec;
+}
+
+.foot2 {
+   justify-self: center;
+   grid-area: foot2;
+}
+
+.foot3 {
+   justify-self: center;
+   grid-area: foot3;
+}
+
+.foot4 {
+   justify-self: center;
+   grid-area: foot4;
+}
+
+.foot5 {
+   justify-self: center;
+   width: auto;
+   grid-area: foot5;
+   margin-top: -15%;
+}
+
+.photo1 {
+   align-self: auto;
+   grid-area: photo1;
+   align-self: center;
+   justify-self: center;
+}
+
+.photo2 {
+   align-self: center;
+   grid-area: photo2;
+}
+
+.dphoto6 {
+   width: 390px;
+   height: auto;
+}
+
+.dphoto5 {
+   width: 390px;
+   height: auto;
+}
+
+.dphoto7 {
+   width: 390px;
+   height: auto;
+}
+
+.photo3 {
+   align-self: center;
+   grid-area: photo3;
+}
+
+.photo4 {
+   align-self: center;
+   grid-area: photo4;
+}
+
+.photo5 {
+   align-self: center;
+   grid-area: photo5;
+}
+
+.photo6 {
+   align-self: center;
+   grid-area: photo6;
+}
+
+.photo7 {
+   align-self: center;
+   grid-area: photo7;
+}
+
+.photo8 {
+   align-self: center;
+   grid-area: photo8;
+}
+
+.photo9 {
+   align-self: center;
+   grid-area: photo9;
+}
+
+.photo10 {
+   align-self: center;
+   grid-area: photo10;
+}
+
+.photo11 {
+   align-self: center;
+   grid-area: photo11;
+}
+
+.photo12 {
+   align-self: center;
+   grid-area: photo12;
+}
+
+.photo13 {
+   align-self: center;
+   grid-area: photo13;
+}
+
+.photo14 {
+   align-self: center;
+   grid-area: photo14;
+}
+
+.photo15 {
+   align-self: center;
+   grid-area: photo15;
+}
+
+.photo16 {
+   align-self: center;
+   grid-area: photo16;
+}
+
+p.judul {
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: bolder;
+   font-size: 21.328px;
+   line-height: 20px;
+   text-align: center;
+   color: #6A4F21;
+   text-align: center;
+   margin-top: 5%;
+   margin-bottom: 5%;
+}
+
+p.judulfoot {
+   margin-top: 10%;
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 16px;
+   line-height: 21.328px;
+   color: #6A4F21;
+   text-align: center;
+   grid-area: judulfoot;
+   margin-bottom: 10px;
+}
+
+p.isifoot {
+   font-family: Helvetica;
+   width: auto;
+   font-style: italic;
+   font-size: 12px;
+   line-height: 25px;
+   /* text-decoration-line: underline; */
+   color: #6A4F21;
+   text-align: center;
+}
+
+p.textfoot {
+   font-family: Helvetica;
+   font-style: italic;
+   font-weight: 500;
+   font-size: 9.005px;
+   line-height: 12px;
+   text-align: center;
+   color: #6A4F21;
+   margin-top: 25%;
+}
+
+.title {
+   font-family: Chaloops;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 50.52px;
+   line-height: 63px;
+   text-align: center;
+   color: #435627;
+   margin-top: 50px ;
+   align-self: center;
+   grid-area: title;
+}
+
+:root {
+   --date: 80px;
+   --titleidx: -20px;
+   --subtitleidx: -100px;
+   --abtus: -50px;
+   --title: 200px;
+}
+
+h3.desc {
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+}
+
+h3.desc2 {
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #6A4F21;
+}
+
+p.isi {
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 21px;
+   text-align: center;
+   color: #6A4F21;
+}
+
+/* index */
+
+.grid1 {
+   display: grid;
+   grid-template-columns: 10px 1fr;
+   grid-template-rows: 150px 100px 100px;
+   grid-template-areas: ". date" ". titleidx" ". subtitleidx" ". abtus";
+   grid-gap: 10px;
+   justify-content: center;
+}
+
+.grid11 {
+   display: grid;
+   grid-template-columns: 20px 80px 1fr 100px 0px;
+   grid-template-rows: 50px 50px 50px;
+   grid-template-areas: ". img1 name1 arr1 ." ". . . . ."". img2 name2 arr2 .";
+   grid-gap: 0px;
+   justify-content: center;
+   align-content: center;
+   margin-bottom: 30px;
+   margin-top: 30px;
+}
+
+.grid12 {
+   display: grid;
+   grid-template-columns: 25% 50% 25%;
+   grid-template-rows: 1fr 1fr 1fr;
+   grid-template-areas: ". img3 ."". img4 . "". img5  .";
+   grid-gap: 10px;
+   justify-content: center;
+   align-content: center;
+   margin-bottom: 10px;
+}
+
+p.namee {
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 12px;
+   line-height: 14px;
+   color: #6A4F21;
+   align-self: center;
+   grid-area: namee;
+   margin-left: 20px;
+   width: 110px;
+}
+
+p.pos1 {
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 19.2px;
+   color: #6A4F21;
+   grid-area: pos1;
+   margin-left: 20px;
+   margin-top: 10px;
+   width: 190px;
+}
+
+.name1 {
+   align-self: center;
+   grid-area: name1;
+}
+
+.name2 {
+   align-self: center;
+   grid-area: name2;
+}
+
+.arr1 {
+   align-self: center;
+   grid-area: arr1;
+   padding-left: 30px;
+   width: 10px;
+   height: 12px;
+}
+
+.arr2 {
+   align-self: center;
+   grid-area: arr2;
+   padding-left: 30px;
+   width: 10px;
+   height: 12px;
+   height: auto;
+}
+
+.logo1 {
+   width: 66px;
+   height: 114px;
+   object-fit: cover;
+   align-content: center;
+   justify-content: center;
+   grid-area: logo1;
+}
+
+.logo2 {
+   width: 143px;
+   height: 87px;
+   object-fit: cover;
+   align-self: center;
+   justify-content: center;
+   grid-area: logo2;
+}
+
+.logo3 {
+   width: 95px;
+   height: 95px;
+   object-fit: cover;
+   align-self: center;
+   justify-content: center;
+   grid-area: logo3;
+}
+
+.img1 {
+   object-position: 20% 10%;
+   width: 85px;
+   height: 85px;
+   padding-left: -20px;
+   object-fit: cover;
+   align-self: center;
+   grid-area: img1;
+  
+}
+
+.img2 {
+   object-position: 60% 10%;
+   width: 85px;
+   height: 85px;
+   object-fit: cover;
+   align-self: center;
+   grid-area: img2;
+}
+
+.img3 {
+   align-self: center;
+   grid-area: img3;
+}
+
+.img4 {
+   align-self: center;
+   grid-area: img4;
+}
+
+.img5 {
+   align-self: center;
+   grid-area: img5;
+}
+
+.hrr {
+   border: 1px solid #6A4F21;
+   align-self: center;
+   grid-area: hrr;
+}
+
+.person2 {
+   align-self: center;
+   grid-area: person2;
+}
+
+.con {
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 21.328px;
+   line-height: 0px;
+   color: #6A4F21;
+   align-self: center;
+   justify-self: center;
+   grid-area: con;
+}
+
+.date {
+   font-family: Helvetica;
+   margin-top: var(--date);
+   font-style: normal;
+   font-weight: bold;
+   font-size: 21.328px;
+   /*asd*/
+   line-height: 50px;
+   color: #6A4F21;
+   align-self: center;
+   grid-area: date;
+}
+
+.titleidx {
+   width: 300px;
+   font-family: Chaloops;
+   margin-top: var(--titleidx);
+   font-style: normal;
+   font-weight: bold;
+   font-size: 50.556px;
+   /*asd*/
+   line-height: 67.34px;
+   color: #435627;
+   align-self: center;
+   grid-area: titleidx
+}
+
+.subtitleidx {
+   margin-top: var(--subtitleidx);
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 16px;
+   /*asd*/
+   line-height: 19.2px;
+   color: #6A4F21;
+   align-self: center;
+   grid-area: subtitleidx;
+}
+
+.abtus {
+   font-family: Helvetica;
+   font-style: normal;
+   border: 3px solid #6A4F21;
+   border-radius: 0;
+   text-align: center;
+   cursor: pointer;
+   padding: 1px 1px;
+   width: 125px;
+   height: auto;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 50px;
+   color: #6A4F21;
+   grid-area: abtus;
+   margin-top: var(--abtus);
+   margin-left: 60%;
+}
+
+.abtus a{
+   text-decoration: none;
+   color: #6A4F21;
+
+}
+
+p.isifoot1 {
+   line-height: 15px;
+}
+
+.donate {
+   display: grid;
+   justify-content: center;
+   grid-template-columns: 1fr;
+   grid-gap: 10px;
+   background-color: #6A4F21;
+   padding: 10px;
+   font-size: 25px;
+   grid-area: donate;
+   /* height: 600px; */
+}
+
+.donate .grid-container {
+   display: grid;
+   justify-content: center;
+   align-content: center;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 50px 200px 200px;
+   grid-template-areas: ". djudul ."". dgambar ." ". dket .";
+   grid-gap: 10px;
+   background-color: #6A4F21;
+   padding: 10px;
+   /* height: 500px; */
+}
+
+.donate .grid-container1 {
+   display: grid;
+   justify-content: center;
+   align-content: center;
+   grid-template-columns: 10px 1fr 1fr 1fr 10px;
+   grid-template-rows: 150px 50px 100px 50px 100px;
+   grid-template-areas: "djudul2 djudul2 djudul2 djudul2 djudul2" ". donatee1 donatee2 donatee3 ." ". donatee4 donatee5 donatee6 ." ". don don don ." ". dket1 dket1 dket1 .";
+   grid-gap: 25px;
+   background-color: #6A4F21;
+   padding: 10px;
+   /* height: 500px; */
+}
+
+.don {
+   font-family: Helvetica;
+   font-style: normal;
+   border: 3px solid #6A4F21;
+   border-radius: 0;
+   cursor: pointer;
+   padding-top: 20px;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 16px;
+   line-height: 19px;
+   color: #6A4F21;
+   background-color: rgba(255, 255, 255, 0.8);
+   grid-area: don;
+   width: 161px;
+   height: 36px;
+   justify-self: center;
+   align-self: center;
+   justify-content: center;
+   align-content: center;
+}
+
+p.djudul1 {
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 21.328px;
+   line-height: 20px;
+   /* or 94% */
+   text-align: center;
+   color: #FFFFFF;
+   justify-self: center;
+   grid-area: djudul;
+   margin-top: 30px;
+   width: 200px;
+}
+
+p.djudul2 {
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 21.328px;
+   line-height: 20px;
+   text-align: center;
+   color: #FFFFFF;
+   justify-self: center;
+   grid-area: djudul2;
+   margin-top: 100px;
+   width: 200px;
+}
+
+.dgambar {
+   justify-self: center;
+   grid-area: dgambar;
+}
+
+.dgambar1 {
+   width: 313px;
+   height: 181px;
+}
+
+.dket {
+   font-family: Helvetica;
+   font-style: italic;
+   font-weight: bold;
+   font-size: 16px;
+   line-height: 21px;
+   /* or 133% */
+   text-align: center;
+   color: #FFFFFF;
+   justify-self: center;
+   grid-area: dket;
+}
+
+.dket1 {
+   font-family: Helvetica;
+   font-style: italic;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 20px;
+   /* or 125% */
+   text-align: center;
+   color: #FFFFFF;
+   justify-self: center;
+   grid-area: dket1;
+}
+
+.donate .grid-container1 div {
+   background-color: rgba(255, 255, 255, 0.8);
+   width: 70px;
+   height: 22px;
+   padding: 10px 0;
+   font-family: Helvetica;
+   font-weight: bold;
+   font-size: 15.995px;
+   line-height: 20px;
+   text-align: center;
+   color: #6A4F21;
+
+
+}
+
+.div1 {
+   justify-self: center;
+   grid-area: donatee1;
+}
+
+.div2 {
+   justify-self: center;
+   grid-area: donatee2;
+}
+
+.div3 {
+   justify-self: center;
+   grid-area: donatee3;
+}
+
+.div4 {
+   justify-self: center;
+   grid-area: donatee4;
+}
+
+.div5 {
+   justify-self: center;
+   grid-area: donatee5;
+}
+
+.div6 {
+   justify-self: center;
+   grid-area: donatee6;
+}
+
+.bckidx {
+   background-image: url("../Foto/foto1.png");
+   background-size: cover;
+   background-position-y: -25%;
+   width: auto;
+   height: 800px;
+}
+
+.bckmain {
+   background-image: url("../background.png");
+   background-size: cover;
+}
+
+@media screen and (max-width: 1081px) {
+   .nav__links, .cta, .foot1 {
+      display: none;
+   }
+   .menu, .footspec {
+      display: initial;
+   }
+}
+
+@media only screen and (min-width: 1081px) {
+   :root {
+      --date: 100px;
+      --titleidx: 0px;
+      --subtitleidx: 0px;
+      --abtus: 0px;
+      --con: 50px
+   }
+   header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 10%;
+      background-color: whitesmoke;
+      position: fixed;
+      width: 80%;
+      height: 50px;
+   }
+   .img1 {
+      object-position: 20% 10%;
+      width: 125px;
+      height: 125px;
+      object-fit: cover;
+      align-self: center;
+      grid-area: img1;
+      margin-left: auto;
+   }
+   .img2 {
+      object-position: 60% 10%;
+      width: 125px;
+      height: 125px;
+      object-fit: cover;
+      align-self: center;
+      grid-area: img2;
+   }
+   p.isifoot {
+      font-size: 12px;
+      line-height: 25px;
+      
+   }
+   p.isifoot1 {
+      line-height: 15px;
+   }
+   p.textfoot {
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: 120%;
+      margin-bottom: 0;
+   }
+   .logo1 {
+      width: 120px;
+      height: auto;
+      object-fit: cover;
+   }
+   .logo2 {
+      width: auto;
+      height: 150px;
+      object-fit: cover;
+   }
+   .logo3 {
+      width: 175px;
+      height: auto;
+      object-fit: cover;
+   }
+
+   p.judulfoot {
+      font-weight: bold;
+      margin-top: 10%;
+      width: 150px;
+      font-size: 15px;
+      line-height: 18px;
+      margin-bottom: 5%;
+      grid-area: judulfoot;
+   }
+
+   .arr1 {
+      align-self: center;
+      grid-area: arr1;
+      width: 10px;
+      height: auto;
+   }
+   .arr2 {
+      align-self: center;
+      grid-area: arr2;
+      width: 10px;
+      height: auto;
+   }
+   .con {
+      margin-top: var(--con);
+      font-size: 21.33px;
+      line-height: 0px;
+      align-self: center;
+      justify-self: center;
+      grid-area: con;
+   }
+   .footspec {
+      display: none
+   }
+   .foot1 {
+      justify-self: center;
+      grid-area: foot1;
+   }
+   .cta {
+      background-color: #6A4F21;
+   }
+   
+   .grid6 {
+      display: grid;
+      grid-template-columns: 100px 1fr 1fr 100px;
+      grid-template-rows: 300px 400px 600px 400px 500px 500px 500px 200px 1fr 0px;
+      grid-template-areas: ". title title ." ". photo1 photo2 ." ". photo3 photo4 ." ". photo5 photo6 ." ". photo7 photo8 ." ". photo9 photo10 ." ". photo11 photo12 ." ". photo13 photo14 ." ". photo15 photo16 ." ". . . .";
+      grid-gap: 100px;
+      justify-content: center;
+      text-align: center;
+   }
+   .dphoto6 {
+      width: 551px;
+      height: auto;
+   }
+   .grid7 {
+      display: grid;
+      grid-template-columns: 100px 1fr 1fr 100px;
+      grid-template-rows: 300px 200px 400px 600px 500PX 200px 50px;
+      grid-template-areas: ". title title ."". subtitle subtitle ." ". photo1 photo2 ." ". photo3 photo4 ." ". photo5 photo6 ." ". endtitle endtitle .";
+      grid-gap: 10px;
+      justify-content: center;
+      text-align: center;
+   }
+   .grid5 {
+      display: grid;
+      grid-template-columns: 100px 1fr 1fr 1fr 100px;
+      grid-template-rows: 300px 200px 1fr 200px 100px;
+      grid-template-areas: ". title title title."". subtitle subtitle subtitle ." ". photo1 . photo2 ." ". isi51 . isi52 ." ". celebrate . wild ." ". donate donate donate .";
+      grid-gap: 10px;
+      justify-content: center;
+      text-align: center;
+   }
+   .donate {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      background-color: #6A4F21;
+      padding: 10px;
+      font-size: 25px;
+      grid-area: donate;
+      height: 600px;
+   }
+   .donate .grid-container {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 50px 1fr 200px;
+      grid-template-areas: "djudul djudul djudul"". dgambar ." ". dket .";
+      grid-gap: 25px;
+      background-color: #6A4F21;
+      padding: 10px;
+      height: 500px;
+   }
+   .donate .grid-container1 {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-template-columns: 10px 1fr 1fr 1fr 10px;
+      grid-template-rows: 150px 50px 100px 50px 1fr;
+      grid-template-areas: "djudul2 djudul2 djudul2 djudul2 djudul2" ". donatee1 donatee2 donatee3 ." ". donatee4 donatee5 donatee6 ." ". don don don ." ". dket1 dket1 dket1 .";
+      grid-gap: 25px;
+      background-color: #6A4F21;
+      padding: 10px;
+      height: 500px;
+   }
+   .don {
+      font-family: Helvetica;
+      font-style: normal;
+      text-align: center;
+      padding-top: 100px;
+      cursor: pointer;
+      padding-top: 15px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      color: #6A4F21;
+      background-color: rgba(255, 255, 255, 0.8);
+      grid-area: don;
+      width: 161px;
+      height: 36px;
+      justify-self: center;
+      align-self: center;
+      justify-content: center;
+      align-content: center;
+   }
+   p.djudul1 {
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 21.328px;
+      line-height: 20px;
+      /* or 94% */
+      text-align: center;
+      color: #FFFFFF;
+      justify-self: center;
+      grid-area: djudul;
+      margin-top: 30px;
+      width: 200px;
+   }
+   p.djudul2 {
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 21.328px;
+      line-height: 20px;
+      text-align: center;
+      color: #FFFFFF;
+      justify-self: center;
+      grid-area: djudul2;
+      margin-top: 100px;
+      width: 200px;
+   }
+   .dgambar {
+      justify-self: center;
+      grid-area: dgambar;
+   }
+
+   .dket {
+      font-family: Helvetica;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 21px;
+      /* or 133% */
+      text-align: center;
+      color: #FFFFFF;
+      justify-self: center;
+      grid-area: dket;
+   }
+   .dket1 {
+      font-family: Helvetica;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      /* or 125% */
+      text-align: center;
+      color: #FFFFFF;
+      justify-self: center;
+      grid-area: dket1;
+   }
+   .donate .grid-container1 div {
+      background-color: rgba(255, 255, 255, 0.8);
+      width: 100px;
+      height: 22px;
+      padding: 20px 0;
+      font-size: 10px;
+      font-family: Helvetica;
+      font-weight: bold;
+      font-size: 19.995px;
+      line-height: 20px;
+      text-align: center;
+      color: #6A4F21;
+   }
+   .div1 {
+      justify-self: center;
+      grid-area: donatee1;
+   }
+   .div2 {
+      justify-self: center;
+      grid-area: donatee2;
+   }
+   .div3 {
+      justify-self: center;
+      grid-area: donatee3;
+   }
+   .div4 {
+      justify-self: center;
+      grid-area: donatee4;
+   }
+   .div5 {
+      justify-self: center;
+      grid-area: donatee5;
+   }
+   .div6 {
+      justify-self: center;
+      grid-area: donatee6;
+   }
+   .isi51 {
+      font-family: Helvetica;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 21px;
+      /* or 133% */
+      text-align: center;
+      color: #6A4F21;
+      justify-self: center;
+      grid-area: isi51;
+   }
+   .isi52 {
+      font-family: Helvetica;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 21px;
+      /* or 133% */
+      text-align: center;
+      color: #6A4F21;
+      justify-self: center;
+      grid-area: isi52;
+   }
+   .celebrate {
+      font-family: Helvetica;
+      font-style: normal;
+      padding-bottom: 5px;
+      background-color: #6A4F21;
+      border-radius: 0;
+      text-align: center;
+      cursor: pointer;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 50px;
+      color: #6A4F21;
+      grid-area: celebrate;
+      width: 162px;
+      height: 41px;
+      color: white;
+   }
+   .wild {
+      font-family: Helvetica;
+      font-style: normal;
+      padding-bottom: 5px;
+      background-color: #6A4F21;
+      border-radius: 0;
+      text-align: center;
+      cursor: pointer;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 50px;
+      color: white;
+      grid-area: wild;
+      width: 215px;
+      height: 41px;
+   }
+   /* ad */
+   .grid1 {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      grid-template-rows: 200px 150px 100px;
+      grid-template-areas: ". date" ". titleidx" ". subtitleidx" ". abtus";
+      grid-gap: 10px;
+      justify-content: center;
+   }
+   p.namee {
+   font-family: Helvetica;
+   font-style: normal;
+   font-weight: bold;
+   color: #6A4F21;
+   align-self: center;
+   grid-area: namee;
+   margin-left: 20px;
+   width: 110px;
+}
+   .grid11 {
+      display: grid;
+      grid-template-columns: 50px 125px 10px 200px 100px 1fr 1fr 125px 10px 300px 10px 1fr 0px;
+      grid-template-rows: 50px;
+      grid-template-areas: ". img1 . name1 . arr1 . img2 . name2 . arr2 .";
+      grid-gap: 0px;
+      justify-content: center;
+      align-content: center;
+      margin-bottom: 50px;
+      margin-top: 50px;
+   }
+   p.pos1 {
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: #6A4F21;
+      grid-area: pos1;
+      margin-left: auto;
+      margin-top: 10px;
+      width: 400px;
+   }
+   p.namee {
+       font-size: 12px;
+      line-height: 14px;
+      margin-left: auto;
+      margin-top: auto;
+      width: 400px;
+   }
+   .grid12 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: ". img3 . img4 . img5 .";
+      grid-gap: 10px;
+      justify-content: center;
+      align-content: center;
+      align-self: center;
+   }
+   .date {
+      font-family: Helvetica;
+      margin-top: var(--date);
+      font-style: normal;
+      font-weight: bold;
+      font-size: 33.178px;
+      line-height: 40px;
+      color: #6A4F21;
+      align-self: center;
+      grid-area: date;
+   }
+   h1.titleidx {
+      width: 800px;
+      margin-top: var(--titleidx);
+      font-family: Chaloops;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 82.556px;
+      line-height: 99px;
+      color: #435627;
+      align-self: center;
+      grid-area: titleidx
+   }
+   .subtitleidx {
+      margin-top: var(--subtitleidx);
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 27.648px;
+      line-height: 33px;
+      color: #6A4F21;
+      align-self: center;
+      grid-area: subtitleidx;
+   }
+   .abtus {
+      margin-top: var(--abtus);
+      margin-bottom: 150px;
+      font-family: Helvetica;
+      font-style: normal;
+      border: 3px solid #6A4F21;
+      border-radius: 0;
+      cursor: pointer;
+      padding: 9px 9px;
+      width: 200px;
+      font-weight: normal;
+      font-size: 33.18px;
+      line-height: 39.82px;
+      color: #6A4F21;
+      align-self: center;
+      grid-area: abtus;
+      margin-left: 0px;
+   }
+   .bckidx {
+      background-image: url("../Foto/foto23-01.png");
+      background-size: cover;
+      background-position-y: 100%;
+      width: auto;
+      height: auto;
+   }
+   .bckmain {
+      background-image: url("../background.png");
+      background-size: cover;
+      background-position-y: 30%;
+   }
+   /* ad */
+   .judul {
+      font-size: 21.328px;
+      line-height: 32px;
+      margin-top: 5%;
+   }
+   h1.title {
+      font-size: 50.517px;
+      line-height: 63px;
+      text-align: center;
+   }
+
+   p.isi {
+      font-size: 16px;
+      line-height: 21px;
+   }
+   .gridfoot {
+      display: grid;
+      grid-template-columns: 1fr 300px 10px 300px 10px 300px 10px 300px 1fr;
+      grid-template-rows: 1fr 50px 50px;
+      grid-template-areas: ". foot1 . foot2 . foot3 . foot4 ." ". . . . . . . . ." "foot5 foot5 foot5 foot5 foot5 foot5 foot5 foot5 foot5";
+      margin-top: 5%;
+      margin-bottom: 5%;
+   }
+   .foot5 {
+      justify-self: center;
+      width: auto;
+      grid-area: foot5;
+      margin-top: -20%;
+   }
+   h3.desc {
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      /* or 133% */
+      text-align: center;
+      color: #6A4F21;
+   }
+   h3.desc2 {
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 21px;
+      /* or 133% */
+      text-align: center;
+      color: #6A4F21;
+   }
+   .grid2 {
+      display: grid;
+      grid-template-columns: 100px 1fr 100px;
+      grid-template-rows: 200px 400px 75px 75px 75px 140px 75px 100px;
+      grid-template-areas: "judul2 judul2 judul2"". foto2 ." ". isi2 ." ". isi22 ." ". isi23 ." ". isi24 ." ". isi25 ."". . .";
+      grid-gap: 10px;
+      justify-content: center;
+      text-align: center;
+   }
+
+   .grid3 {
+      display: grid;
+      grid-template-columns: 100px 1fr 100px;
+      grid-template-rows: 200px 400px 75px 75px 75px 75px 75px 50px;
+      grid-template-areas: "judul2 judul2 judul2"". foto2 ." ". isi2 ." ". isi22 ." ". isi23 ." ". isi24 ." ". isi25 ."". . .";
+      grid-gap: 10px;
+      justify-content: center;
+      text-align: center;
+   }
+   .grid4 {
+   display: grid;
+   grid-template-columns: 100px 1fr 100px;
+   grid-template-rows: 200px 400px 50px 75px 75px 75px 50px 50px 50px 50px 50px;
+   grid-template-areas: "judul2 judul2 judul2"". foto2 ." ". isi2 ." ". isi22 ." ". isi23 ." ". isi24 ." ". isi25 ." ". isi26 ." ". isi27 ." ". isi28 ."". . ." ;
+   grid-gap: 10px;
+   justify-content: center;
+   text-align: center;
+
+}
+   .judul2 {
+      justify-self: center;
+      grid-area: judul2;
+      font-family: Chaloops;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 28.43px;
+      line-height: 28px;
+      color: #6A4F21;
+      margin-top: 75px
+   }
+   .foto2 {
+      justify-self: center;
+      grid-area: foto2;
+      width: 599px;
+      height: 356px;
+   }
+   .isi2 {
+      justify-self: center;
+      grid-area: isi2;
+      font-family: Helvetica LT Std;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      /* or 133% */
+      text-align: center;
+      color: #6A4F21;
+   }
+   .isi22 {
+      justify-self: center;
+      grid-area: isi22;
+      font-family: Helvetica LT Std;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      /* or 133% */
+      text-align: center;
+      color: #6A4F21;
+   }
+   .isi23 {
+      justify-self: center;
+      grid-area: isi23;
+      font-family: Helvetica LT Std;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      /* or 133% */
+      text-align: center;
+      color: #6A4F21;
+   }
+   .isi24 {
+      justify-self: center;
+      grid-area: isi24;
+      font-family: Helvetica LT Std;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      /* or 133% */
+      text-align: center;
+      color: #6A4F21;
+   }
+   .isi25 {
+      justify-self: center;
+      grid-area: isi25;
+      font-family: Helvetica LT Std;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      /* or 133% */
+      text-align: center;
+      color: #6A4F21;
+   }
+   .dphoto5 {
+      width: 551px;
+      height: auto;
+   }
+
+   .dphoto7 {
+      width: 551px;
+      height: 308px;
+   }
+
+   p.textfoot {
+      line-height: 18px;
+
+   }
+}
