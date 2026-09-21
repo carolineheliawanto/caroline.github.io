@@ -7,7 +7,8 @@ weight and progress over time.
 ## Tech stack
 
 - Next.js 14 (App Router) + TypeScript + Tailwind CSS
-- SQLite + Prisma ORM (swap to Postgres later by changing `provider` in
+- Postgres + Prisma ORM (works with any Postgres host — Neon, Vercel Postgres,
+  Supabase, etc.; swap providers by changing `provider` in
   `prisma/schema.prisma` and `DATABASE_URL`)
 - NextAuth (credentials/email+password) for per-user auth
 - Anthropic Claude API (`claude-sonnet-5`) for food photo analysis, called only
@@ -35,11 +36,15 @@ cp .env.local.example .env.local
 `.env.local`:
 
 ```
-DATABASE_URL="file:./dev.db"
+DATABASE_URL="postgresql://user:password@host/dbname?sslmode=require"
 NEXTAUTH_SECRET="a-long-random-string"   # generate with `openssl rand -base64 32`
 NEXTAUTH_URL="http://localhost:3000"
 ANTHROPIC_API_KEY="sk-ant-..."           # your Claude API key
 ```
+
+A free Postgres database works fine for `DATABASE_URL` — e.g. sign up at
+[neon.tech](https://neon.tech), create a project, and copy the connection
+string it gives you.
 
 `ANTHROPIC_API_KEY` is read only on the server (inside API routes) and is never
 sent to the browser. If it's missing, photo analysis returns a friendly error
@@ -49,17 +54,19 @@ Prisma's CLI (used for migrations) reads a plain `.env` file rather than
 `.env.local`, so also create one containing just the database URL:
 
 ```bash
-echo 'DATABASE_URL="file:./dev.db"' > .env
+echo 'DATABASE_URL="postgresql://user:password@host/dbname?sslmode=require"' > .env
 ```
 
 ### 3. Set up the database
 
 ```bash
-npx prisma migrate dev --name init
+npx prisma migrate deploy
 ```
 
-This creates `dev.db` (SQLite) and applies the schema. Re-run
-`npx prisma migrate dev` any time you change `prisma/schema.prisma`.
+This applies the schema (`prisma/migrations/`) to your Postgres database.
+`npm run build` also runs this automatically before building, so a fresh
+deploy always has an up-to-date schema. If you change `prisma/schema.prisma`
+during development, regenerate the migration with `npx prisma migrate dev`.
 
 ### 4. Run the app
 
@@ -79,6 +86,26 @@ npm test
 Runs the Vitest suite covering `src/lib/calorie-math.ts` (BMR/TDEE/macros and
 the safety guardrails: minimum-calorie floors, 1%-bodyweight pace cap, BMI
 warnings).
+
+## Deploying to Vercel
+
+1. Push this branch/repo to GitHub (already done if you're reading this from
+   a PR), then go to [vercel.com/new](https://vercel.com/new) and import the
+   repo.
+2. Under **Root Directory**, select `calorie-tracker` (this app lives in a
+   subdirectory of the repo, not the repo root).
+3. Add these Environment Variables (Project Settings → Environment Variables):
+   - `DATABASE_URL` — your Postgres connection string (e.g. from Neon)
+   - `NEXTAUTH_SECRET` — a random string (`openssl rand -base64 32`)
+   - `NEXTAUTH_URL` — set this **after** the first deploy, once you know your
+     assigned `*.vercel.app` URL (or custom domain); then redeploy
+   - `ANTHROPIC_API_KEY` — your Claude API key (optional — without it, photo
+     analysis shows a friendly error but manual logging still works)
+4. Deploy. Vercel runs `npm run build`, which applies pending Prisma
+   migrations to `DATABASE_URL` automatically before building — no manual
+   migration step needed.
+5. Once deployed, set `NEXTAUTH_URL` to the live URL and trigger a redeploy
+   (Deployments → ⋯ → Redeploy) so auth callback URLs resolve correctly.
 
 ## Project structure
 
