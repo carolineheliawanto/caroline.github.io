@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+
+  profile     Profile?
+  weightLogs  WeightEntry[]
+  foodLogs    FoodLog[]
+}
+
+model Profile {
+  id             String   @id @default(cuid())
+  userId         String   @unique
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  gender         String   // "male" | "female"
+  birthDate      DateTime
+  heightCm       Float
+  currentWeightKg Float
+  targetWeightKg Float
+  activityLevel  String   // sedentary | light | moderate | active | very_active
+  goalPaceKg     Float    // kg per week, positive number; direction inferred from current vs target weight
+  units          String   @default("metric") // metric | imperial
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model WeightEntry {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date      DateTime
+  weightKg  Float
+  createdAt DateTime @default(now())
+
+  @@index([userId, date])
+}
+
+model FoodLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date      DateTime
+  mealType  String   // breakfast | lunch | dinner | snack
+  photoUrl  String?
+  notes     String?
+  createdAt DateTime @default(now())
+
+  items     FoodItem[]
+
+  @@index([userId, date])
+}
+
+model FoodItem {
+  id         String  @id @default(cuid())
+  foodLogId  String
+  foodLog    FoodLog @relation(fields: [foodLogId], references: [id], onDelete: Cascade)
+  name       String
+  portion    String?
+  calories   Float
+  proteinG   Float   @default(0)
+  carbsG     Float   @default(0)
+  fatG       Float   @default(0)
+  confidence String? // low | medium | high
+  source     String  // "ai" | "manual"
+}
